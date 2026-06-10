@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Commodities 2026 — Value Analysis | J.S. Barrientos Rivera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1F3A5F;
+  --ink:#0F1D2F;
+  --paper:#FBFAF7;
+  --card:#FFFFFF;
+  --gold:#C9A227;
+  --gold-soft:#F0E6C8;
+  --slate:#5B6B7F;
+  --line:#E3DFD5;
+  --green:#2E7D5B;
+  --green-soft:#E4F0EA;
+  --red:#A94442;
+  --red-soft:#F6E8E7;
+  --amber:#B07A1F;
+  --amber-soft:#F5EDD9;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
+body{
+  font-family:'Source Sans 3',-apple-system,Segoe UI,Roboto,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:16.5px;
+  line-height:1.62;
+}
+.mono{font-family:'IBM Plex Mono',ui-monospace,Menlo,monospace;}
+
+/* ===== Masthead ===== */
+.masthead{
+  background:var(--ink);
+  color:#CBD5E1;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11.5px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 28px;
+  border-bottom:1px solid rgba(201,162,39,.35);
+}
+.masthead .dot{color:var(--gold);}
+
+/* ===== Hero ===== */
+.hero{
+  background:linear-gradient(155deg,var(--navy) 0%,var(--ink) 78%);
+  color:#F4F1E8;
+  padding:64px 28px 56px;
+}
+.hero-inner{max-width:980px;margin:0 auto;}
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);
+  display:flex;align-items:center;gap:12px;margin-bottom:22px;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:rgba(201,162,39,.4);}
+.hero h1{
+  font-family:'Fraunces',Georgia,serif;
+  font-weight:600;
+  font-size:clamp(34px,5vw,54px);
+  line-height:1.08;
+  letter-spacing:-.01em;
+  max-width:840px;
+}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero .standfirst{
+  margin-top:22px;max-width:760px;
+  font-size:18.5px;line-height:1.6;color:#D8DEE6;
+}
+.hero-meta{
+  margin-top:36px;display:flex;flex-wrap:wrap;gap:28px;
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#AEB9C6;
+}
+.hero-meta b{display:block;color:#F4F1E8;font-weight:500;font-size:13.5px;margin-top:3px;}
+.classification{
+  display:inline-block;margin-top:34px;
+  border:1px solid rgba(201,162,39,.55);color:var(--gold);
+  font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;
+  padding:6px 14px;text-transform:uppercase;
+}
+
+/* ===== Layout ===== */
+.container{max-width:980px;margin:0 auto;padding:0 28px;}
+.section{padding:54px 0 8px;}
+.section-head{display:flex;align-items:baseline;gap:16px;margin-bottom:26px;}
+.section-num{
+  font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold);
+  letter-spacing:.1em;white-space:nowrap;
+}
+h2{
+  font-family:'Fraunces',Georgia,serif;font-weight:600;
+  font-size:clamp(24px,3vw,31px);color:var(--navy);line-height:1.15;
+}
+.section-head::after{content:"";flex:1;height:1px;background:var(--line);align-self:center;}
+h3{
+  font-family:'Fraunces',Georgia,serif;font-weight:600;
+  font-size:20px;color:var(--navy);margin:26px 0 10px;
+}
+p{margin-bottom:14px;}
+p.lede{font-size:18px;color:#33445C;}
+strong{color:var(--navy);}
+.note{font-size:13.5px;color:var(--slate);}
+
+/* ===== Verdict banner ===== */
+.verdict{
+  background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);
+  padding:26px 28px;margin:38px 0 6px;
+}
+.verdict .label{
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:8px;
+}
+.verdict p{font-size:17.5px;margin-bottom:0;}
+
+/* ===== Dashboard table ===== */
+.table-wrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:720px;}
+thead th{
+  background:var(--navy);color:#EDEAE0;text-align:left;
+  font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:11.5px;
+  letter-spacing:.08em;text-transform:uppercase;padding:12px 14px;
+}
+tbody td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+tbody tr:last-child td{border-bottom:none;}
+td.num{font-family:'IBM Plex Mono',monospace;font-size:13.5px;white-space:nowrap;}
+td .cname{font-weight:700;color:var(--navy);}
+td .csub{font-size:12px;color:var(--slate);display:block;}
+.up{color:var(--green);font-weight:600;}
+.down{color:var(--red);font-weight:600;}
+
+/* ===== Rating chips ===== */
+.chip{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;
+  font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  padding:5px 12px;border-radius:2px;white-space:nowrap;
+}
+.chip.under{background:var(--red-soft);color:var(--red);border:1px solid #DFC2C1;}
+.chip.neutral{background:#EDF0F4;color:var(--slate);border:1px solid #D4DAE2;}
+.chip.over{background:var(--green-soft);color:var(--green);border:1px solid #C2DACD;}
+.chip.watch{background:var(--amber-soft);color:var(--amber);border:1px solid #E3D3AC;}
+
+/* ===== Commodity cards ===== */
+.ccard{
+  background:var(--card);border:1px solid var(--line);
+  padding:30px 30px 26px;margin-bottom:30px;
+}
+.ccard-top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap;margin-bottom:6px;}
+.ccard h3{margin:0;font-size:24px;}
+.ccard .ticker{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--slate);letter-spacing:.06em;margin-top:4px;display:block;}
+.kpis{display:flex;flex-wrap:wrap;gap:26px;margin:18px 0 6px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.kpi{min-width:120px;}
+.kpi .k{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);}
+.kpi .v{font-family:'IBM Plex Mono',monospace;font-size:17px;font-weight:600;color:var(--navy);margin-top:2px;}
+.kpi .v small{font-size:11.5px;font-weight:400;color:var(--slate);}
+
+/* ===== Margin-of-safety gauge (signature element) ===== */
+.gauge{margin:20px 0 8px;}
+.gauge .g-title{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--slate);margin-bottom:10px;
+  display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
+}
+.g-track{
+  position:relative;height:34px;background:#F1EFE8;border:1px solid var(--line);
+}
+.g-band{
+  position:absolute;top:0;bottom:0;
+  left:var(--band-start);width:calc(var(--band-end) - var(--band-start));
+  background:repeating-linear-gradient(45deg,var(--gold-soft),var(--gold-soft) 6px,#E8DCB4 6px,#E8DCB4 12px);
+  border-left:1px solid var(--gold);border-right:1px solid var(--gold);
+}
+.g-band span{
+  position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--amber);
+  white-space:nowrap;padding-top:4px;
+}
+.g-spot{
+  position:absolute;top:-7px;bottom:-7px;left:var(--spot);width:3px;
+  background:var(--navy);
+}
+.g-spot::after{
+  content:attr(data-label);
+  position:absolute;bottom:100%;left:50%;transform:translateX(-50%);
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;
+  color:var(--navy);white-space:nowrap;padding-bottom:3px;
+}
+.g-scale{
+  display:flex;justify-content:space-between;
+  font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9AA4B0;margin-top:22px;
+}
+.g-read{font-size:14px;color:#33445C;margin-top:14px;}
+.g-read b{color:var(--navy);}
+
+/* ===== Risk grid ===== */
+.risk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:8px;}
+.risk{background:var(--card);border:1px solid var(--line);padding:20px 22px;}
+.risk .r-tag{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;margin-bottom:8px;
+}
+.risk .r-tag.bear{color:var(--red);}
+.risk .r-tag.bull{color:var(--green);}
+.risk h4{font-family:'Fraunces',Georgia,serif;font-size:16.5px;color:var(--navy);margin-bottom:6px;}
+.risk p{font-size:14px;margin-bottom:0;color:#3A4A60;}
+
+/* ===== Positioning ===== */
+.pos-item{
+  display:flex;gap:18px;background:var(--card);border:1px solid var(--line);
+  padding:20px 24px;margin-bottom:14px;align-items:flex-start;
+}
+.pos-rank{
+  font-family:'Fraunces',Georgia,serif;font-size:30px;font-weight:700;
+  color:var(--gold);line-height:1;min-width:42px;
+}
+.pos-item p{margin-bottom:0;font-size:15px;}
+.pos-item .pos-h{font-weight:700;color:var(--navy);font-size:16px;display:block;margin-bottom:3px;}
+
+/* ===== Sources / footer ===== */
+.sources{font-size:13px;color:var(--slate);line-height:1.7;}
+.disclaimer{
+  background:#F2F0E9;border:1px solid var(--line);padding:22px 26px;
+  font-size:13px;color:var(--slate);margin-top:36px;
+}
+.report-footer{
+  margin-top:60px;background:var(--ink);color:#AEB9C6;padding:38px 28px;
+}
+.rf-inner{max-width:980px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center;}
+.rf-name{font-family:'Fraunces',Georgia,serif;font-size:20px;color:#F4F1E8;}
+.rf-sub{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;margin-top:4px;}
+.rf-right{font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-align:right;}
+
+@media (max-width:640px){
+  .masthead{flex-direction:column;gap:4px;text-align:center;}
+  .hero{padding:46px 20px 44px;}
+  .container{padding:0 20px;}
+  .ccard{padding:22px 18px;}
+  .rf-inner{flex-direction:column;text-align:center;}
+  .rf-right{text-align:center;}
+}
+@media print{
+  .hero{background:var(--navy);}
+  .ccard,.risk,.pos-item{break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <span>JSBR <span class="dot">●</span> Independent Research</span>
+  <span>Distribution: Private <span class="dot">●</span> 10·06·2026</span>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Sector Report · Global Commodities · Value Investing Framework</div>
+    <h1>The Year of the Shock: War Prices, <em>Cost</em> Anchors, and the Discipline of Not Paying the Premium</h1>
+    <p class="standfirst">
+      Following the outbreak of the conflict in Iran on 28 February 2026 and the effective closure of the Strait of Hormuz,
+      the commodities complex is trading with historically elevated geopolitical and speculative premiums. This report evaluates
+      each commodity against its fundamental anchor — the marginal cost of production — to identify where a real margin of safety
+      exists and where investors are merely paying for fear.
+    </p>
+    <div class="hero-meta">
+      <div>Author<b>José Saúl Barrientos Rivera</b></div>
+      <div>Analytical framework<b>CFA-style · Value Investing</b></div>
+      <div>Data date<b>9–10 June 2026</b></div>
+      <div>Coverage<b>Brent · Gold · Silver · Copper · Uranium</b></div>
+    </div>
+    <span class="classification">Analytical document — Not investment advice</span>
+  </div>
+</header>
+
+<main class="container">
+
+<section class="section" id="summary">
+  <div class="section-head"><span class="section-num">01</span><h2>Executive Summary</h2></div>
+  <p class="lede">
+    2026 is an extraordinary year for commodities — and precisely for that reason, a dangerous year to buy them.
+    The World Bank projects energy prices to rise by roughly 24% this year, the highest level since Russia’s invasion
+    of Ukraine in 2022, while the broad commodities index is expected to increase by about 16%, driven by the war in
+    the Middle East, surging fertilizer prices, and metals at historical highs.
+  </p>
+  <p>
+    The trigger is well known: the Iran war and the <strong>dual blockade of the Strait of Hormuz</strong> by the
+    United States and Iran, which has severely restricted flows of crude oil, refined products, and gas from the
+    Persian Gulf. Brent briefly exceeded <span class="mono">$115/bbl</span> at the peak of the conflict; gold reached
+    roughly <span class="mono">$5,000/oz</span> in February; silver approached <span class="mono">$87/oz</span>; and
+    copper set all-time records on both COMEX and the LME.
+  </p>
+  <p>
+    Today, the dominant story is <strong>de-escalation</strong>: a fragile but still active ceasefire, a 60-day
+    memorandum of understanding between Washington and Tehran that is nearly agreed, and Iran’s announcement that it
+    has ended its military operations against Israel on 8 June. Brent has already corrected about 20% from its highs
+    — its worst month since the pandemic in May — while silver fell about 22% in one month and gold declined to
+    roughly $4,300, its lowest level since March. At the same time, the macro backdrop has turned
+    <strong>hostile for precious metals</strong>: U.S. inflation is expected to reach 4.2% in May, the highest level
+    in almost three years; employment remains strong at +172k; and markets are pricing an approximately 70%
+    probability of a Fed <em>rate hike</em> in December.
+  </p>
+
+  <div class="verdict">
+    <div class="label">Value Verdict — Overall View</div>
+    <p>
+      <strong>A value investor does not buy geopolitical premiums; a value investor buys assets near or below their
+      replacement cost.</strong> By that standard, most of the complex looks expensive: gold trades at roughly 2.6×
+      its production cost, silver at around 3.4×, and oil remains 40–50% above marginal cost despite a projected
+      supply surplus in Q4 2026. The notable exception is <strong>uranium</strong>, which is trading almost exactly
+      within its incentive-price band while benefiting from structural demand from nuclear power and AI data centers.
+      Preference hierarchy: uranium &gt; copper on corrections &gt; energy on deep pullbacks &gt; gold &gt; silver.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="methodology">
+  <div class="section-head"><span class="section-num">02</span><h2>Methodology: What Does “Value” Mean in Commodities?</h2></div>
+  <p>
+    A commodity does not generate cash flows: there is no DCF to be performed on a bar of metal or a barrel of oil.
+    Graham would classify it as a speculative asset — <em>unless</em> the price is bought at a discount to a
+    verifiable economic anchor. This report uses four anchors, in order of importance:
+  </p>
+  <p>
+    <strong>(1) Marginal cost of production.</strong> The 90th percentile of the industry cost curve
+    (AISC for metals; shale breakevens and OPEC fiscal costs for crude; incentive prices for new copper and uranium
+    projects). Over the long run, price gravitates toward the cost of the marginal producer: paying far above that
+    level requires a thesis of permanent scarcity; buying near or below it offers a margin of safety.
+    <strong>(2) Physical balance</strong> — inventories, supply/demand, spare capacity.
+    <strong>(3) Mean reversion in real prices</strong> adjusted for inflation.
+    <strong>(4) Positioning</strong> — when price is supported by speculative flows rather than the physical balance,
+    correction risk dominates.
+  </p>
+  <p class="note">
+    The cost bands used in this report are the author’s estimates based on industry ranges, including producer-reported
+    AISC figures and cost-curve data from sector research providers. They should be treated as orders of magnitude,
+    not audited figures.
+  </p>
+</section>
+
+<section class="section" id="dashboard">
+  <div class="section-head"><span class="section-num">03</span><h2>Market Dashboard — 9/10 June 2026</h2></div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Commodity</th>
+          <th>Spot / Future</th>
+          <th>2026 Reference Points</th>
+          <th>Cost Anchor (est.)</th>
+          <th>Price / Anchor</th>
+          <th>Value Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="cname">Brent Crude Oil</span><span class="csub">ICE, front-month future</span></td>
+          <td class="num">~$92–94 /bbl</td>
+          <td class="num"><span class="down">−20% from peak</span> (~$115) · May: worst month since 2020</td>
+          <td class="num">$45–65</td>
+          <td class="num">~1.5×</td>
+          <td><span class="chip neutral">Neutral / tactical bearish</span></td>
+        </tr>
+        <tr>
+          <td><span class="cname">WTI Crude Oil</span><span class="csub">NYMEX, front-month future</span></td>
+          <td class="num">~$88–90 /bbl</td>
+          <td class="num"><span class="down">−17% in May</span> · peak &gt;$102</td>
+          <td class="num">$45–60</td>
+          <td class="num">~1.5×</td>
+          <td><span class="chip neutral">Neutral / tactical bearish</span></td>
+        </tr>
+        <tr>
+          <td><span class="cname">Gold</span><span class="csub">XAU/USD</span></td>
+          <td class="num">~$4,300 /oz</td>
+          <td class="num"><span class="down">Lowest since March</span> · Feb peak ~$5,000</td>
+          <td class="num">$1,500–1,700 (AISC)</td>
+          <td class="num">~2.6×</td>
+          <td><span class="chip under">Underweight</span></td>
+        </tr>
+        <tr>
+          <td><span class="cname">Silver</span><span class="csub">XAG/USD</span></td>
+          <td class="num">~$67.5 /oz</td>
+          <td class="num"><span class="down">−21.6% in 1 month</span> · <span class="up">+84.6% YoY</span> · peak ~$87</td>
+          <td class="num">$15–22 (AISC)</td>
+          <td class="num">~3.4×</td>
+          <td><span class="chip under">Underweight</span></td>
+        </tr>
+        <tr>
+          <td><span class="cname">Copper</span><span class="csub">COMEX / LME</span></td>
+          <td class="num">~$6.4–6.6 /lb · ~$13k /t</td>
+          <td class="num"><span class="up">Record $6.716/lb</span> (13 May) · LME record $14,527/t (Jan)</td>
+          <td class="num">$4.00–4.50 (incentive)</td>
+          <td class="num">~1.4×</td>
+          <td><span class="chip watch">Neutral — buy corrections</span></td>
+        </tr>
+        <tr>
+          <td><span class="cname">Uranium U₃O₈</span><span class="csub">Spot</span></td>
+          <td class="num">~$86 /lb</td>
+          <td class="num">Consolidation · &lt;$85 in late May</td>
+          <td class="num">$75–90 (incentive)</td>
+          <td class="num">~1.0×</td>
+          <td><span class="chip over">Relative overweight</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note" style="margin-top:12px;">
+    Energy supplement: U.S. natural gas rose roughly 6.1% in May according to the World Bank index, in contrast
+    with a −10.7% monthly decline in Brent; the metals index rose +3.7% and precious metals fell −1.7%.
+    OPEC+ approved another quota increase of +188,000 b/d for July.
+  </p>
+</section>
+
+<section class="section" id="analysis">
+  <div class="section-head"><span class="section-num">04</span><h2>Commodity-by-Commodity Analysis</h2></div>
+
+  <div class="ccard">
+    <div class="ccard-top">
+      <div>
+        <h3>Crude Oil (Brent / WTI)</h3>
+        <span class="ticker">ICE BRENT · NYMEX WTI</span>
+      </div>
+      <span class="chip neutral">Neutral / tactical bearish</span>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="k">Brent</div><div class="v">~$93 <small>/bbl</small></div></div>
+      <div class="kpi"><div class="k">WTI</div><div class="v">~$89 <small>/bbl</small></div></div>
+      <div class="kpi"><div class="k">From 2026 peak</div><div class="v" style="color:var(--red);">−20%</div></div>
+      <div class="kpi"><div class="k">Fitch — avg. Brent 2026</div><div class="v">$87 <small>/bbl</small></div></div>
+    </div>
+    <p>
+      <strong>Situation.</strong> Crude oil is now unwinding the largest geopolitical premium since 2022. The war,
+      which began on 28 February, and the dual blockade of Hormuz reduced Iranian crude loadings to below 0.3 Mb/d
+      in May, versus 1.7 Mb/d in March, and pushed Brent above $115. With the ceasefire holding, a 60-day MOU nearly
+      signed, and Iran announcing a halt to military operations on 8 June, May became Brent’s worst month since the
+      pandemic at −19%, and the price broke below $93. Two additional factors add downside pressure: OPEC+ continues
+      to raise quotas (+188k b/d in July), and China has aggressively reduced imports, drawing down inventories
+      rather than buying new barrels.
+    </p>
+    <p>
+      <strong>Value lens.</strong> The marginal-cost anchor — U.S. shale breakevens around $45–55, offshore projects
+      and OPEC fiscal thresholds up to roughly $65 — places structural “fair value” well below spot. Fitch expects
+      Hormuz to reopen by late July, Brent to average $87 in 2026, and — crucially — a <strong>supply surplus in
+      Q4 2026</strong> as Gulf production normalizes and OPEC+ accelerates. Buying oil today is effectively a bet
+      that the war resumes: that is headline speculation, not investment.
+    </p>
+    <div class="gauge">
+      <div class="g-title"><span>Price vs. marginal-cost anchor</span><span>Scale: $0–120/bbl</span></div>
+      <div class="g-track" style="--band-start:37.5%;--band-end:54.2%;--spot:77.5%;">
+        <div class="g-band"><span>Anchor $45–65</span></div>
+        <div class="g-spot" data-label="Brent ~$93"></div>
+      </div>
+      <div class="g-scale"><span>$0</span><span>$30</span><span>$60</span><span>$90</span><span>$120</span></div>
+      <p class="g-read"><b>Read-through:</b> roughly 1.5× the anchor. No margin of safety. Disciplined accumulation zone: <b>$65–75 Brent</b>, ideally after Hormuz reopens and the market digests the projected Q4 surplus.</p>
+    </div>
+  </div>
+
+  <div class="ccard">
+    <div class="ccard-top">
+      <div>
+        <h3>Gold</h3>
+        <span class="ticker">XAU/USD</span>
+      </div>
+      <span class="chip under">Underweight</span>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="k">Spot</div><div class="v">~$4,300 <small>/oz</small></div></div>
+      <div class="kpi"><div class="k">Peak (Feb-26)</div><div class="v">~$5,000</div></div>
+      <div class="kpi"><div class="k">Level</div><div class="v" style="color:var(--red);">Lowest since March</div></div>
+      <div class="kpi"><div class="k">Prob. Fed hike Dec.</div><div class="v">~70%</div></div>
+    </div>
+    <p>
+      <strong>Situation.</strong> Gold traded near $5,000 in February amid full war panic and now trades around
+      $4,300, back to December 2025 levels. The correction has two catalysts: Iran–Israel de-escalation removes
+      the safe-haven bid, while the Fed turn removes support on the monetary side. With May inflation expected at
+      4.2%, the highest in almost three years and driven by energy, and employment remaining strong, markets are
+      pricing roughly a 70% probability of a Fed <em>rate hike</em> in December. Rising real rates plus a stronger
+      dollar (DXY near two-month highs) is the worst macro mix for a non-yielding asset.
+    </p>
+    <p>
+      <strong>Value lens.</strong> The average AISC of the gold mining industry is around $1,500–1,700/oz: gold
+      trades at approximately 2.6× its cost of production, a premium that historically requires either massive
+      central-bank buying or an active crisis. The structural argument — de-dollarization and official-sector demand —
+      is real, but it is already more than reflected in the price. For a value investor, gold at these levels protects
+      less than it costs. If hedging exposure is required, <strong>low-cost producers and royalty companies</strong>
+      offer better economics than the metal: they capture record margins of roughly $2,600/oz above AISC and trade
+      at more reasonable multiples.
+    </p>
+    <div class="gauge">
+      <div class="g-title"><span>Price vs. cost anchor (AISC)</span><span>Scale: $0–5,200/oz</span></div>
+      <div class="g-track" style="--band-start:28.8%;--band-end:32.7%;--spot:82.7%;">
+        <div class="g-band"><span>AISC $1,500–1,700</span></div>
+        <div class="g-spot" data-label="Gold ~$4,300"></div>
+      </div>
+      <div class="g-scale"><span>$0</span><span>$1,300</span><span>$2,600</span><span>$3,900</span><span>$5,200</span></div>
+      <p class="g-read"><b>Read-through:</b> roughly 2.6× the anchor, with the Fed in restrictive mode. No margin of safety. Preferred exposure: producers/royalties, not the metal.</p>
+    </div>
+  </div>
+
+  <div class="ccard">
+    <div class="ccard-top">
+      <div>
+        <h3>Silver</h3>
+        <span class="ticker">XAG/USD</span>
+      </div>
+      <span class="chip under">Underweight</span>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="k">Spot (9 Jun)</div><div class="v">$67.5 <small>/oz</small></div></div>
+      <div class="kpi"><div class="k">1 month</div><div class="v" style="color:var(--red);">−21.6%</div></div>
+      <div class="kpi"><div class="k">Year-over-year</div><div class="v" style="color:var(--green);">+84.6%</div></div>
+      <div class="kpi"><div class="k">JPM — avg. 2026e</div><div class="v">$81 <small>/oz</small></div></div>
+    </div>
+    <p>
+      <strong>Situation.</strong> Silver is the most extreme asset in the complex: +130% in 2025, a peak near $87
+      in February 2026, and a −21.6% collapse over the past month to roughly $67.5. It remains up 84.6% year over
+      year. J.P. Morgan projects an average price of $81/oz for 2026 — more than twice the 2025 average — supported
+      by industrial demand from photovoltaics and electronics, while warning that the higher price itself could
+      erode demand and amplify volatility.
+    </p>
+    <p>
+      <strong>Value lens.</strong> At roughly 3.4× its production cost, with primary AISC around $15–22/oz, silver
+      has the weakest margin of safety across the entire coverage universe. The 22% drop in one month illustrates
+      the problem: a small market, dominated by speculative flows, where the industrial thesis coexists with extreme
+      sentiment beta. The fact that price has more than doubled versus its historical average does not make it cheap
+      simply because it corrected from $87 — that is <em>anchoring</em>, the very bias value investing exists to fight.
+    </p>
+    <div class="gauge">
+      <div class="g-title"><span>Price vs. cost anchor (primary AISC)</span><span>Scale: $0–90/oz</span></div>
+      <div class="g-track" style="--band-start:16.7%;--band-end:24.4%;--spot:75%;">
+        <div class="g-band"><span>AISC $15–22</span></div>
+        <div class="g-spot" data-label="Silver $67.5"></div>
+      </div>
+      <div class="g-scale"><span>$0</span><span>$22.5</span><span>$45</span><span>$67.5</span><span>$90</span></div>
+      <p class="g-read"><b>Read-through:</b> roughly 3.4× the anchor and down 22% in one month: the correction is not an opportunity, but a warning. Suitable for traders only, not value investors.</p>
+    </div>
+  </div>
+
+  <div class="ccard">
+    <div class="ccard-top">
+      <div>
+        <h3>Copper</h3>
+        <span class="ticker">COMEX HG · LME 3M</span>
+      </div>
+      <span class="chip watch">Neutral — buy corrections</span>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="k">COMEX</div><div class="v">~$6.4–6.6 <small>/lb</small></div></div>
+      <div class="kpi"><div class="k">COMEX record (13 May)</div><div class="v">$6.716</div></div>
+      <div class="kpi"><div class="k">LME record (Jan)</div><div class="v">$14,527 <small>/t</small></div></div>
+      <div class="kpi"><div class="k">2025</div><div class="v" style="color:var(--green);">+41%</div></div>
+    </div>
+    <p>
+      <strong>Situation.</strong> Copper is the only story in the complex where record prices rest on structural
+      demand rather than fear: AI infrastructure and data centers, electrification, and the energy transition are
+      colliding with a mining supply chain that takes 10–15 years to respond. After closing 2025 at $12,423/t on
+      the LME and $5.68/lb on COMEX with +41% gains, copper set records in January on the LME at $14,527/t and in
+      May on COMEX at $6.716/lb, while consolidating near the upper end of the range despite weaker Chinese imports.
+    </p>
+    <p>
+      <strong>Value lens.</strong> The incentive price for new greenfield projects is around $4.00–4.50/lb, meaning
+      spot trades at approximately 1.4× that anchor. This is the most defensible multiple in the complex: the
+      structural deficit is plausible, and the true marginal producer — new projects, declining ore grades, permitting
+      delays — becomes more expensive every year. But “structural quality” does not mean “buying at historical highs.”
+      Value discipline requires waiting for corrections toward the incentive band. Accumulation zone:
+      <strong>$4.80–5.30/lb</strong>. A better vehicle may be low-cost producers with volume growth, which monetize
+      the deficit without paying the record spot price.
+    </p>
+    <div class="gauge">
+      <div class="g-title"><span>Price vs. greenfield incentive price</span><span>Scale: $0–7/lb</span></div>
+      <div class="g-track" style="--band-start:57.1%;--band-end:64.3%;--spot:92.9%;">
+        <div class="g-band"><span>Incentive $4.0–4.5</span></div>
+        <div class="g-spot" data-label="Cu ~$6.5"></div>
+      </div>
+      <div class="g-scale"><span>$0</span><span>$1.75</span><span>$3.50</span><span>$5.25</span><span>$7.00</span></div>
+      <p class="g-read"><b>Read-through:</b> roughly 1.4× the anchor — the most justifiable premium in the complex, but still a premium. Structural thesis intact; entry price, not yet.</p>
+    </div>
+  </div>
+
+  <div class="ccard">
+    <div class="ccard-top">
+      <div>
+        <h3>Uranium (U₃O₈)</h3>
+        <span class="ticker">SPOT U₃O₈ · Proxy: Sprott Physical Uranium Trust</span>
+      </div>
+      <span class="chip over">Relative overweight</span>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="k">Spot (8 Jun)</div><div class="v">$86.1 <small>/lb</small></div></div>
+      <div class="kpi"><div class="k">Late May</div><div class="v">&lt;$85</div></div>
+      <div class="kpi"><div class="k">Regime</div><div class="v">Consolidation</div></div>
+      <div class="kpi"><div class="k">Marginal demand</div><div class="v">Nuclear + AI</div></div>
+    </div>
+    <p>
+      <strong>Situation.</strong> Uranium is consolidating around $86/lb after the speculative rally of early 2026
+      cooled, with utility buyers relying more on long-term contracts than on the spot market. The structural
+      backdrop is the strongest in decades: Meta and Microsoft have signed agreements to secure nuclear capacity
+      for AI data centers, Italy is advancing a legal framework to reactivate nuclear energy, and volatility in
+      electricity markets, worsened by the war-driven energy shock, is pushing governments toward nuclear baseload
+      generation.
+    </p>
+    <p>
+      <strong>Value lens.</strong> Uranium is the only commodity in this coverage trading <em>inside</em> its
+      incentive-price band of roughly $75–90/lb — the level required for new mining projects to reach final investment
+      decision. In other words, the market is not paying a speculative premium: it is paying approximately what it
+      costs to bring on the future supply needed by structural demand. Price ≈ replacement cost + growing and
+      inelastic demand (uranium is only about 5% of the cost of operating a reactor, so demand is not destroyed by
+      higher fuel prices) + multi-decade contractual buyers. This is the closest thing to a Graham-style setup
+      available in the commodities complex in June 2026. Vehicles: physical trust such as Sprott or established
+      low-cost producers; avoid non-producing explorers.
+    </p>
+    <div class="gauge">
+      <div class="g-title"><span>Price vs. new-project incentive price</span><span>Scale: $0–120/lb</span></div>
+      <div class="g-track" style="--band-start:62.5%;--band-end:75%;--spot:71.7%;">
+        <div class="g-band"><span>Incentive $75–90</span></div>
+        <div class="g-spot" data-label="U₃O₈ $86"></div>
+      </div>
+      <div class="g-scale"><span>$0</span><span>$30</span><span>$60</span><span>$90</span><span>$120</span></div>
+      <p class="g-read"><b>Read-through:</b> roughly 1.0× the anchor — spot is <b>inside</b> the incentive-price band. The only case in the complex where price does not embed either fear or euphoria.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="macro">
+  <div class="section-head"><span class="section-num">05</span><h2>Macro Backdrop: The Fed Is the Enemy Again</h2></div>
+  <p>
+    The energy supply shock is doing what supply shocks do: feeding through into headline inflation. Consensus
+    expects the May U.S. CPI release to rise to <strong>4.2%</strong>, the highest level in almost three years,
+    driven by energy. With the labor market adding 172,000 jobs in May, well above expectations, markets have moved
+    from pricing cuts to pricing an approximately <strong>70% probability of a rate hike in December</strong>, up from
+    about 50% before the employment data. The dollar, measured by DXY, reacted by rising to nearly two-month highs.
+  </p>
+  <p>
+    For the commodities complex, this creates the key divergence that structures the entire report:
+    <strong>monetary assets</strong> such as gold and silver face rising real rates and a stronger dollar — a direct
+    headwind — while <strong>physical-balance assets</strong> such as copper and uranium depend on industrial
+    supply/demand and are relatively less exposed to the Fed cycle. Oil sits in the middle: its price today is almost
+    entirely a function of Hormuz geopolitics, while the macro picture — weak China and rising OPEC+ supply — points
+    lower once the premium dissipates.
+  </p>
+  <p class="note">
+    World Bank context (Commodity Markets Outlook, 2 June 2026 update): in May, the energy index fell −5.4%
+    (Brent −10.7%, U.S. natural gas +6.1%); metals rose +3.7%; precious metals fell −1.7%; food rose +1.9%;
+    and fertilizers declined −4.3% after several months of increases. Annual 2026 projection: energy +24%,
+    broad commodities index +16%.
+  </p>
+</section>
+
+<section class="section" id="risks">
+  <div class="section-head"><span class="section-num">06</span><h2>Risk Matrix</h2></div>
+  <div class="risk-grid">
+    <div class="risk">
+      <div class="r-tag bear">Bearish for the complex</div>
+      <h4>Hormuz reopening around late July, according to Fitch</h4>
+      <p>Normalizes roughly 1.4 Mb/d of Iranian loadings and Gulf flows. Fitch sees a supply surplus in Q4 2026 as OPEC+ accelerates. This deflates crude, gas, and by contagion the inflation bid in gold.</p>
+    </div>
+    <div class="risk">
+      <div class="r-tag bull">Bullish for the complex</div>
+      <h4>Ceasefire breakdown</h4>
+      <p>The agreement is fragile: attacks were exchanged over the weekend of 6–7 June. A full resumption would revive the war premium in crude, plausibly adding $15–25/bbl, and renew the safe-haven bid in precious metals.</p>
+    </div>
+    <div class="risk">
+      <div class="r-tag bear">Bearish for precious metals</div>
+      <h4>Fed hiking cycle</h4>
+      <p>Expected CPI at 4.2% plus a strong labor market implies a 70% probability of a December hike. Rising real rates and a stronger DXY hurt gold and silver, which already trade at 2.6×–3.4× their cost base.</p>
+    </div>
+    <div class="risk">
+      <div class="r-tag bear">Bearish for industrial metals</div>
+      <h4>Weak Chinese demand</h4>
+      <p>China has aggressively reduced crude imports by drawing down inventories, and its industrial momentum remains the main uncertainty for copper at historical highs.</p>
+    </div>
+    <div class="risk">
+      <div class="r-tag bear">Bearish — positioning</div>
+      <h4>Speculative unwind</h4>
+      <p>Silver fell 22% in one month without a major fundamental change, illustrating how much hot money supports precious metals. Further 15–25% corrections are plausible without breaking the underlying “thesis.”</p>
+    </div>
+    <div class="risk">
+      <div class="r-tag bull">Bullish for uranium</div>
+      <h4>Nuclear-AI acceleration</h4>
+      <p>Each hyperscaler agreement, including Meta and Microsoft, and each new regulatory framework, such as Italy’s, tightens the structural deficit. Fuel demand is price-inelastic.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="positioning">
+  <div class="section-head"><span class="section-num">07</span><h2>Suggested Positioning — Framework, Not Recommendation</h2></div>
+  <p class="lede">Value hierarchy across the commodities complex as of June 2026, from most to least attractive on a price/anchor basis:</p>
+
+  <div class="pos-item">
+    <div class="pos-rank">1</div>
+    <p><span class="pos-h">Uranium — Relative overweight</span>
+    The only asset trading at roughly 1.0× its incentive anchor, with growing and inelastic structural demand.
+    Vehicles: physical trust or established low-cost producers. Position size should remain moderate: the spot market is illiquid and volatile.</p>
+  </div>
+  <div class="pos-item">
+    <div class="pos-rank">2</div>
+    <p><span class="pos-h">Copper — Accumulate on corrections ($4.80–5.30/lb)</span>
+    The best structural thesis: AI and electrification versus inelastic supply. However, record prices are not an entry point.
+    Prefer low-cost producers with volume growth over futures exposure.</p>
+  </div>
+  <div class="pos-item">
+    <div class="pos-rank">3</div>
+    <p><span class="pos-h">Energy — Patience until $65–75 Brent</span>
+    Let the war premium continue to unwind and allow the market to digest the projected Q4 2026 supply surplus.
+    In that range, integrated majors with capital discipline become interesting again, with double-digit FCF yields.</p>
+  </div>
+  <div class="pos-item">
+    <div class="pos-rank">4</div>
+    <p><span class="pos-h">Gold — Underweight the metal; if hedging is required, use royalties/producers</span>
+    At 2.6× AISC with the Fed hiking, the metal offers little margin of safety. Producers capture record margins of roughly $2,600/oz and offer better economics.</p>
+  </div>
+  <div class="pos-item">
+    <div class="pos-rank">5</div>
+    <p><span class="pos-h">Silver — Avoid / trading only</span>
+    3.4× its cost anchor, down 22% in one month, and a small market dominated by flows. Volatility is not a margin of safety.</p>
+  </div>
+
+  <p class="note" style="margin-top:18px;">
+    Note for private investors in Switzerland: exposure through <strong>producer equities</strong> preserves the
+    private investor capital-gains treatment; intensive use of leveraged futures or derivatives may put that tax
+    classification at risk. This is an additional reason — alongside the negative carry of rolling futures — to
+    prefer low-cost equities as the implementation vehicle.
+  </p>
+</section>
+
+<section class="section" id="sources">
+  <div class="section-head"><span class="section-num">08</span><h2>Sources and Data</h2></div>
+  <p class="sources">
+    Market prices and data (9–10 Jun 2026): Trading Economics (Brent, WTI, gold, silver, uranium); Fortune
+    (daily silver); Barchart (COMEX gold/copper futures and records); CNBC (crude timeline, May 2026; Iranian
+    loadings via UBS); TradingKey/Fitch Ratings (average Brent projection of $87 for 2026, Hormuz reopening,
+    Q4 supply surplus); J.P. Morgan Global Research (average silver projection of $81 for 2026e); World Bank —
+    Commodity Markets Outlook (2 Jun 2026 update: annual projections and May indices); carboncredits.com
+    (uranium spot $86.1/lb, 8 Jun). Cost anchors (AISC, breakevens, incentive prices): author estimates based on
+    industry ranges.
+  </p>
+  <div class="disclaimer">
+    <strong>Legal notice.</strong> This document was prepared by José Saúl Barrientos Rivera solely for informational
+    and educational purposes. It does not constitute investment advice, personalized recommendation, or an offer or
+    solicitation to buy or sell any financial instrument. Commodities and their derivatives involve high risk,
+    including the total loss of capital. Prices quoted correspond to 9–10 June 2026 and change continuously; cost
+    anchors are estimates and may be inaccurate. Any investment decision should be based on independent analysis and,
+    where appropriate, the advice of a licensed financial adviser. Past performance does not guarantee future results.
+  </div>
+</section>
+
+</main>
+
+<footer class="report-footer">
+  <div class="rf-inner">
+    <div>
+      <div class="rf-name">José Saúl Barrientos Rivera</div>
+      <div class="rf-sub">M.A. Economics &amp; Management · CFA Level I Candidate</div>
+    </div>
+    <div class="rf-right">
+      Global Commodities Report — Value Framework<br>
+      10 June 2026 · Olten, Switzerland
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
